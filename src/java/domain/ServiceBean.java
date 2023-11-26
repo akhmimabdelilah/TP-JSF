@@ -29,7 +29,7 @@ public class ServiceBean {
      * Creates a new instance of ServiceBean
      */
     public ServiceBean() {
-//        services = new ArrayList<>();
+        services = new ArrayList<>();
         service = new Service();
         serviceService = new ServiceService();
 
@@ -48,7 +48,7 @@ public class ServiceBean {
         System.out.println(service.getLibelle());
         services.add(service);
         serviceService.create(service);
-        System.out.println(services);
+        System.out.println(services);  
         service = new Service();
         return null;
     }
@@ -59,13 +59,6 @@ public class ServiceBean {
 
     public void setService(Service service) {
         this.service = service;
-    }
-
-    public List<Service> getServices() {
-        if (services == null) {
-            services = serviceService.getAll();
-        }
-        return services;
     }
 
 //    public List<Service> serviceLoad() {
@@ -87,4 +80,10 @@ public class ServiceBean {
         this.services = services;
     }
 
+    public List<Service> getServices() {
+        if (services == null) {
+            services = serviceService.getAll();
+        }
+        return services;
+    }
 }
